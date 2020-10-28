@@ -3,9 +3,17 @@
     <ul class="collapsible">
         {% for task in tasks %}
         <li>
-            <div class="collapsible-header">
-                <span class="material-icons">keyboard_arrow_down </span>
-                <strong>{{task.task_name}}</strong> : {{task.due_date}}
+            <div class="collapsible-header ">
+                <div class="col s3">
+                    <span class="material-icons">keyboard_arrow_down </span>
+                    <a class="waves-effect waves-light btn btn_small">Done</a>
+                    <a class="waves-effect waves-light btn btn_small blue">Edit</a>
+                </div>
+                <div class="col s3 task_header">
+                    <strong>{{task.task_name}}</strong> : {{task.due_date}}
+                </div>
+
+                
                 {% if task.is_urgent == "on" %}
                     <i class="fas fa-exclamation-circle light-blue-text text-lighten-2 tooltipped"
                         data-position="right" data-tooltip="URGENT!"></i>
