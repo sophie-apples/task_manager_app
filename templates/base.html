@@ -19,6 +19,22 @@
         $(document).ready(function(){
             $('.collapsible').collapsible();
         });
+
+        $(document).ready(function(){
+            $('.datepicker').pickadate({
+                selectMonths: true,
+                selectYeats: 15,
+                today: 'Today',
+                clear: 'Clear',
+                close: 'Ok',
+                closeOnSelect: false
+            });
+        });
+
+        document.getElementById("matfix").addEventListener("click", function(e) {
+	        e.stopPropagation();
+        });
     </script>
+    
 </body>
 </html>
