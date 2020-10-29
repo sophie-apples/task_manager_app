@@ -3,7 +3,7 @@
 <h3>Edit Task</h3>
 
 <div class="row">
-    <form action="{{ url_for ('insert_task') }}" method="POST" class="col s12">
+    <form action="{{ url_for ('update_task') }}" method="POST" class="col s12">
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
@@ -61,8 +61,14 @@
                 <i class="material-icons right">playlist_add</i>
             </button>
         </div>
-
     </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        due_date = Date.parse('{{task.due_date}}');
+        $('#due_date').pickadate('picker').set('select', due_date, {format: 'dd/mm/yyyy'}).trigger('change');
+    });
+</script>
 
 {% endblock %}
